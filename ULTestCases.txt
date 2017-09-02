@@ -1,0 +1,22 @@
+Requirements:
+One uppercase
+One lowercase
+One digit
+One !@#$
+5+ characters
+No space, tab, return
+
+Permissable:
+Aa!1a
+!!!!!AAAAAaaaaa11111
+John1!
+!!!!!!!!!!!AAAAAAAAAAAaaaaaaaaaaa111111111111
+J@ne123
+
+Impermissable:
+Aa1aa
+john1!
+Aa!1
+A 1!a
+John!!
+!!!!!!!!!!AAAAAAAAAAAAAA111111111111111111111
