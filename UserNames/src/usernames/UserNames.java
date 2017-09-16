@@ -62,7 +62,7 @@ public class UserNames {
                 if (mlower.find()) {
                     //System.out.println("Found value: " + mlower.group(0));
                     lowercaseFlag = true;
-                    System.out.println("The flag for lowercase is set to true:" + lowercaseFlag);
+                    //System.out.println("The flag for lowercase is set to true:" + lowercaseFlag);
                 }else {
                     System.out.println("There is no lowercase character.");
                 }
