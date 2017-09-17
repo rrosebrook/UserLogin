@@ -1,12 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//Rachel Rosebrook
+//September 2017
+
+//UserNames.java - Allow the user to input a username, determine whether or not it meets certain character requirements, and print the results to a file.
+//This build currently does NOT print the results to a file.
 package usernames;
 
 import java.util.Scanner;
 import java.util.regex.*;
+import java.io.*;
 
 public class UserNames {
     static String LoginFromUser;
@@ -21,9 +22,9 @@ public class UserNames {
     static boolean usernameValid = false;
     
     static String repeat = "";
-    
-    
     static Scanner repeaty = new Scanner(System.in);
+    
+    static StringBuffer sbf = new StringBuffer(110);
     
     //public String usernamepattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.[!@#$])(?=\\S+$).{5,}";
     /*static Pattern pattern;
@@ -170,7 +171,10 @@ public class UserNames {
 	}*/
 	public static void addToReport() {
             if (usernameValid == true) {
-		System.out.println("addToReport - the username worked");
+                //StringBuffer sbf = new StringBuffer(110);
+                sbf.append(LoginFromUser + "\n");
+		//System.out.println(sbf);
+                //System.out.println("addToReport - the username was valid.");
 	} else {
                 System.out.println("addtoReport - the username did not work");
             }
@@ -181,7 +185,17 @@ public class UserNames {
             repeat = repeaty.next();
         }
 	public static void printReport() {
-		System.out.println("printReport");
+		//System.out.println("printReport");
+                System.out.println(sbf);
+                //Path file = Paths.get("C:/Usernames.txt");
+                try {
+                    PrintWriter writer = new PrintWriter("C:/Users/Owner/Documents/Usernames.txt", "UTF-8");
+                    writer.print(sbf);
+                    writer.close();
+                }
+                catch (IOException e) {
+                    System.out.println("Exception");
+                }
 }
 	
 	public static void main(String[] argvs) {
